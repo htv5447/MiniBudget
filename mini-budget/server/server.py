@@ -11,7 +11,7 @@ api = Api(app) #api router
 
 
 api.add_resource(GetItems,'/items')
-
+api.add_resource(AddItem,'/item/')
 
 if __name__ == '__main__':
     print("Loading db");

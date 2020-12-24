@@ -14,3 +14,10 @@ class GetItems(Resource):
         return data
 
 
+class AddItem(Resource):
+    def post(self):
+        parser = reqparse.RequestParser()
+        parser.add_argument('item')
+        parser.add_argument('price')
+        args = parser.parse_args()
+        exec_commit("INSERT INTO budget(items,price) VALUES(%s,%s)",[str(args['item']),str(args['price'])])

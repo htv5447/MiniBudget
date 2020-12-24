@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Table} from 'reactstrap';
 import './Main.css';
+import Add from './Add';
 
 class Main extends Component{
     constructor(props){
@@ -36,6 +37,7 @@ class Main extends Component{
     renderBudget = (data) =>{
         return(
         <tr key={data.id}>
+          <td></td>
           <td>{data.items}</td>
           <td>{data.price}</td>
         </tr>)
@@ -56,6 +58,7 @@ class Main extends Component{
           </thead>
           <tbody>{this.state.data.map(this.renderBudget)}</tbody>
           </Table>
+          <Add onClick = {this.refreshPage}/>
             </div>
         )
     }
